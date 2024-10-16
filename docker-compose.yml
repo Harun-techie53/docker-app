@@ -1,0 +1,21 @@
+version: "3"
+services:
+  node-app:
+    build: .
+    ports:
+      - "5000:3000"
+    environment:
+      - PORT=3000
+    depends_on:
+      - mongo
+
+  mongo: 
+    image: mongo:7.0
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=harun
+      - MONGO_INITDB_ROOT_PASSWORD=testpassword
+    volumes:
+      - mongo-db:/data/db
+
+volumes:
+  mongo-db:

@@ -1,0 +1,23 @@
+{
+  "name": "node-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "docker-prod-up": "docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build",
+    "docker-dev-up": "docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d --build",
+    "docker-dev-down": "docker compose -f docker-compose.yml -f docker-compose.dev.yml down -v",
+    "docker-prod-down": "docker compose -f docker-compose.yml -f docker-compose.prod.yml down -v"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
